@@ -1,5 +1,5 @@
 # Thread-Pool
-Failed attempt at a user friednly, type safe thread pool.
+Failed attempt at a user friendly, type safe thread pool.
 
 ## High Level Goal
 Avoid using `void*` syntax in `thread_start` on start function as it forces a reinterpret cast to access function arguement. Attempt to do so using c++ utilities such as SFINAE, tuple, partial template specialization and a few more related. Would allow for type safe usage of threads.
