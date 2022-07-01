@@ -15,8 +15,11 @@ Achieved quite well. Only esed QA resources enough times to be counted on one ha
 
 ## Documentation
 ### Usage
-To build, create build directory in top-level of project and run `cmake` from inside said build directory.  
-Can use either camke command line flags with `-D`, or json file.
+To build, create build directory in top-level of project and run `cmake` from inside said build directory. If JSON is updated, must rerun `cmake` configuration.  
+
+Can use either camke command line flags with `-D`, or json file.  
+
+If a JSON file is given, build automatically defaults to using the file until. Only when flags are given, will they be used as they are not saved.
 
 ### JSON
 To use JSON file, use `-D` to `cmake` setting vairable `JSON_PATH=`*rel_or_abs_path*   
