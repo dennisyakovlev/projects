@@ -11,7 +11,7 @@ A mostly working as intended project. Only thing not working is adding coverage 
 A flaw in the top-level cmake design is adding ability to choose which tergets recieve code coverage. Better idea would be make use of different build types and add flags as needed.
 
 ### Goal Achieval
-Achieved quite well. Only esed QA resources enough times to be counted on one hand. The documentation combined with basic self testing is capable of demonstrating a completely new technology enough to have a basic user understanding of it.
+Achieved quite well. Only used QA resources enough times to be counted on one hand. The documentation combined with basic self testing is capable of demonstrating a completely new technology enough to have a basic user understanding of it.
 
 ## Documentation
 ### Usage
