@@ -8,7 +8,7 @@ Every project has `README` which briefly describes project.
 ## Complexity
 Projects are grouped below into two complexities  
 &nbsp;&nbsp;&nbsp;&nbsp;`basic`    which is no more than an expieremental usage or implementation of one specific item. feature, technology etc.  
-&nbsp;&nbsp;&nbsp;&nbsp;`less-basic` which is a bare-bones combination of a small number of items, features, teachnologies etc.
+&nbsp;&nbsp;&nbsp;&nbsp;`less-basic` which is a bare-bones combination of a small number of items, features, technologies etc.
 
 ### basic
 - cmake_basics
