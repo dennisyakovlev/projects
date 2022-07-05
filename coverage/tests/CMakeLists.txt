@@ -6,6 +6,7 @@ set(EXE_TEST tout)
 set(sources 
     main_tests.cpp
     algo_test_1.cpp
+    algo_test_2.cpp
 )
 set(libs
     gtest
