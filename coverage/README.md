@@ -6,7 +6,7 @@ Learn how to use GNU's code coverage tools of `gcov` and `lcov` combined with `g
 * [Goal](#high-level-goal)
 * [Results](#result)
     * [Functionality](#functionality)
-    * [Goal Reflection](#goal-gchieval)
+    * [Goal Reflection](#goal-achieval)
 * [Usage](#usage)
     * [CMake](#cmake)
     * [Shell](#shell)
