@@ -4,6 +4,7 @@
 #   is correct, but will give error
 
 # manually do steps without makefile
+# builds gtest target and generate html coverage report
 
 # if planning on running manual.sh from not within the folder it
 #   is in, must set below to be aboslute path to manual.sh
@@ -33,16 +34,17 @@ fi
 # use "coverage" to be able to generate coverage
 #   use -O0 so that optimization don't interfere 
 coverage="-O0 --coverage"
+cflags="-std=c++2a"
 
 # build directory
 mkdir -p build
 cd build
 # compile into object files
-g++ $coverage -c "${this_file_path}"/lib/src/*.cpp -I"${this_file_path}"/lib/include
+g++ $coverage $cflags -c "${this_file_path}"/lib/src/*.cpp -I"${this_file_path}"/lib/include
 
 #  -- start --
 # steps for static lib
-g++ -c $coverage -o libmy_algo.a *.o
+g++ -c $coverage $cflags -o libmy_algo.a *.o
 ar rvs libmy_algo.a *.o
 #  --  end  --
 
@@ -65,8 +67,8 @@ rm *.o
 #   - include algo headers, tell static linker where to find my_algo and gtest, tell dynamic linker to
 #       link against my_algo, gtest, pthread, add coverage flags
 #   - generates .gcno files, to generate .gcda files must run a.out
-# g++ "${this_file_path}"/tests/*.cpp -O0 -I"${this_file_path}"/lib/include -L"${this_file_path}"/build -L/usr/lib/gtest -lmy_algo -lgtest -pthread -fprofile-arcs -ftest-coverage
 g++ $coverage \
+    $cflags \
     "${this_file_path}"/tests/*.cpp \
     -I"${this_file_path}"/lib/include \
     -L"${this_file_path}"/build \
@@ -74,7 +76,12 @@ g++ $coverage \
     -lmy_algo \
     -lgtest \
     -pthread
+# keep color of output, but unbuffer is not too standard, so careful
 unbuffer ./a.out > ../test_res.gtest
+if [ "$?" -ne 0 ]; then
+    >&2 echo "\033[0;31mTests failed\033[0m"
+    exit 1
+fi
 
 # generate lcov file
 lcov -c -d . -o result.info
