@@ -1,9 +1,11 @@
 # own library for some algorithms from leetcode
 set(include
     algo_1.h
+    algo_2.h
 )
 set(source
     algo_1.cpp
+    algo_2.cpp
 )
 list(TRANSFORM include PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/include/algorithm/)
 list(TRANSFORM source PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/src/)

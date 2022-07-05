@@ -35,7 +35,6 @@ public:
     Node(t v_) : v(v_), _l(nullptr), _r(nullptr) {}
     Node(t v_, _p _l_, _p _r_) : v(v_), _l(_l_), _r(_r_) {}
 };
-// using _Node = Node*;
 
 int numAverageSubtree(_Node);
 
