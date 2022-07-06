@@ -13,6 +13,7 @@ Projects are grouped below into two complexities
 ### basic
 - cmake_basics
 - failed_thread_pool
+- makefile_basics
 - monitor_dir
 - mutex_demo
 - n_thread
